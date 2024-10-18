@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Shapes Grid</title>
+    
+</head>
+<body>
+    
+    <div class="grid-container">
+        <div class="shape circle"></div>
+        <div class="shape square"></div>
+        <div class="shape rectangle"></div>
+        <div class="shape triangle"></div>
+        <div class="shape diamond"></div>
+        <div class="shape oval"></div>
+        <div class="shape hexagon"></div>
+        <div class="shape pentagon"></div>
+        <div class="shape trapezoid"></div>
+        <div class="shape rhombus"></div>
+        <div class="shape star"></div>
+        <div class="shape heart"></div>
+        <div class="shape parallelogram"></div>
+        <div class="shape crescent"></div>
+        <div class="shape arrow"></div>
+        <div class="shape cross"></div>
+        <div class="shape wave"></div>
+        <div class="shape spiral"></div>
+        <div class="shape cylinder"></div>
+        <div class="shape cube"></div>
+        <div class="shape cone"></div>
+    </div>
+    
+<div class="power-selection">
+    <h2>Select a Power</h2>
+    <div class="image-gallery">
+        <div class="power-image selected" data-power="teleportation">
+            <img src="https://raw.githubusercontent.com/MysticWaveTech/HyperlinkwareDigitalRadionics/refs/heads/main/ai-generated-8635557_1280.png" alt="Teleportation" />
+            Teleportation 
+        </div>
+        <div class="power-image" data-power="telekinesis">
+            <img src="https://raw.githubusercontent.com/MysticWaveTech/HyperlinkwareDigitalRadionics/refs/heads/main/fantasy-8037694_1280%20(1).png" alt="Telekinesis" />
+            Telekinesis 
+        </div>
+        <div class="power-image" data-power="shapeshifting">
+            <img src="https://raw.githubusercontent.com/MysticWaveTech/HyperlinkwareDigitalRadionics/refs/heads/main/ai-generated-8266689_1280%20(1).jpg" alt="Shapeshifting" />
+            Shapeshifting 
+        </div>
+        <div class="power-image" data-power="materialisation">
+            <img src="https://raw.githubusercontent.com/MysticWaveTech/HyperlinkwareDigitalRadionics/refs/heads/main/ai-generated-8743711_1280.png" alt="Materialisation" />
+            Materialisation 
+        </div>
+        <div class="power-image" data-power="invincibility">
+            <img src="https://raw.githubusercontent.com/MysticWaveTech/HyperlinkwareDigitalRadionics/refs/heads/main/ai-generated-8474888_1280.jpg" alt="Invincibility" />
+            Invincibility 
+        </div>
+    </div>
+</div>
+
+<script>
+const powerImages = document.querySelectorAll('.power-image');
+const shapeGrid = document.getElementById('shapeGrid');
+
+// Event listener for power image selection
+powerImages.forEach((image) => {
+    image.addEventListener('click', function () {
+        // Clear the selected class from all images
+        powerImages.forEach((img) => {
+            img.classList.remove('selected'); // Remove the selected class from all
+        });
+
+        // Add the selected class to the clicked image
+        this.classList.add('selected'); 
+
+        // Create shapes for the selected power
+        createShapes(); 
+        shapeGrid.style.display = 'grid'; // Show the shape grid
+    });
+});
+
+// Initialize the first power image (Teleportation) with a selected class
+powerImages[0].classList.add('selected'); // Start with the first image selected
+createShapes(); // Create shapes for the initial power
+shapeGrid.style.display = 'grid'; // Show the shape grid
+</script>
+
+<style>
+.power-image {
+    border: 5px solid transparent; /* Default border color */
+    cursor: pointer;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+.power-image.selected {
+    border-color: lime; /* Highlight color for selected power */
+}
+
+.power-image img {
+    width: 100%; /* Set images to 20% width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Crop the height proportionally */
+}
+
+.image-gallery{
+    width: 20%;
+}
+
+.power-selection {
+    
+    width: 100%;
+}
+</style>
+<style>
+        
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-gap: 10px;
+}
+
+.shape {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #000;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.circle {
+    border-radius: 50%;
+    background-color: red;
+}
+
+.square {
+    background-color: blue;
+}
+
+.rectangle {
+    width: 100px;
+    height: 50px;
+    background-color: green;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid yellow;
+    background-color: transparent;
+}
+
+.diamond {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid purple;
+    transform: rotate(45deg);
+    background-color: transparent;
+}
+
+.oval {
+    border-radius: 50% / 25%;
+    background-color: orange;
+}
+
+.hexagon {
+    width: 100px;
+    height: 55px;
+    background-color: teal;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.pentagon {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid cyan;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.trapezoid {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 70px solid magenta;
+    clip-path: polygon(0 100%, 100% 100%, 75% 0%, 25% 0%);
+}
+
+.rhombus {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid lime;
+    transform: rotate(45deg);
+}
+
+.star {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid gold;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    clip-path: polygon(50% 100%, 100% 40%, 60% 0%, 0% 40%);
+}
+
+.parallelogram {
+    width: 100px;
+    height: 50px;
+    background-color: violet;
+    transform: skew(-20deg);
+}
+
+.crescent {
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+    border-radius: 50%;
+    position: relative;
+}
+
+.crescent:before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0; /* Background color */
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 20px; /* Adjust the position for crescent effect */
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid black;
+    position: relative;
+}
+
+.arrow:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid black;
+    position: absolute;
+    top: -20px; /* Adjust the position of the arrow head */
+    left: 15px; /* Center the arrow head */
+}
+
+.cross {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    background-color: none;
+}
+
+.cross:before, .cross:after {
+    content: '';
+    position: absolute;
+    background-color: navy;
+}
+
+.cross:before {
+    width: 100%;
+    height: 20px;
+    top: 20px;
+}
+
+.cross:after {
+    width: 20px;
+    height: 100%;
+    left: 20px;
+}
+
+.wave {
+    width: 100px;
+    height: 20px;
+    background-color: coral;
+    clip-path: polygon(0 50%, 10% 0%, 20% 50%, 30% 0%, 40% 50%, 50% 0%, 60% 50%, 70% 0%, 80% 50%, 100% 0%, 100% 100%, 0 100%);
+}
+
+.spiral {
+    width: 100px;
+    height: 100px;
+    background-color: limegreen;
+    border-radius: 50%;
+    clip-path: path('M 50 50 L 100 50 C 90 80 80 80 50 50 C 30 20 50 0 50 0 C 40 20 30 20 20 50 C 0 80 20 100 50 100 Z');
+}
+
+.cylinder {
+    width: 100px;
+    height: 100px;
+    background-color: #555;
+    border-radius: 50px / 10px;
+    position: relative;
+}
+
+.cylinder:before {
+    content: '';
+    width: 100px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: 0;
+}
+
+.cube {
+    width: 80px;
+    height: 80px;
+    background-color: #444;
+    position: relative;
+}
+
+.cube:before {
+    content: '';
+    width: 80px;
+    height: 80px;
+    background-color: #666;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.cone {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 60px solid #ff6347;
+}
+
+.shape:active {
+    transform: scale(0.9);
+}
+        
+    </style>
+<script>
+    const shapes = document.querySelectorAll('.shape');
+
+shapes.forEach(shape => {
+    shape.addEventListener('click', () => {
+        const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+        shape.style.backgroundColor = randomColor;
+    });
+});
+    </style>
+
+
+</body>
+</html>
